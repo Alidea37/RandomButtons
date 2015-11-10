@@ -69,4 +69,46 @@ public class LabelFrame extends JFrame {
 			pic.setVisible(true);
 			return null;
 		}
-		}
+				// create a method for jframe containing tower
+				public Graphics getGraphics4(){ 		
+					JPanel Tower = new JPanel();
+					LabelFrame pic = new LabelFrame();
+					pic.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+					pic.setSize(600, 450);
+					
+					final JLabel label4; // JLabel with text and Icon
+					Icon tower = new ImageIcon(getClass().getResource("TowerWindow.jpg"));
+					label4 = new JLabel(); // JLabel constructor no arguments
+					label4.setText("You jumped through the window!");
+					label4.setIcon(tower); // add icon to JLabel
+					label4.setHorizontalTextPosition(SwingConstants.CENTER);
+					label4.setVerticalTextPosition(SwingConstants.BOTTOM);
+					Tower.add(label4); // add label to JFrame
+					pic.add(Tower);
+					pic.setVisible(true);
+					return null;
+				}
+				// create a method for jframe containing troll
+				public Graphics getGraphics5(){ 		
+					JPanel Dragon = new JPanel();
+					LabelFrame pic = new LabelFrame();
+					pic.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+					pic.setSize(600, 450);
+					
+					final JLabel label5; // JLabel with text and Icon
+					Icon dragon = new ImageIcon(getClass().getResource("dragon.jpg"));
+					label5 = new JLabel(); // JLabel constructor no arguments
+					label5.setText("You met a dragon!");
+					label5.setIcon(dragon); // add icon to JLabel
+					label5.setHorizontalTextPosition(SwingConstants.CENTER);
+					label5.setVerticalTextPosition(SwingConstants.BOTTOM);
+					Dragon.add(label5); // add label to JFrame
+					pic.add(Dragon);
+					pic.setVisible(true);
+					return null;
+				}
+
+
+
+
+}
