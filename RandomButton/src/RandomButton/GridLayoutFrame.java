@@ -13,7 +13,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 {
 	private final JButton[] buttons; // create array of buttons
 	private static final String[] names = {"one", "two", "three", "four", "five", "End Game"};
-	private boolean toggle = true; 				// switches between the two layouts
+	//private boolean toggle = true; 				// switches between the two layouts
 	private final Container container;			// frame container
 	private final GridLayout gridLayout1;		// first grid layout
 	
@@ -42,62 +42,86 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 	{
 		
 		if (event.getSource() == buttons[0]) // if 1 is selected
-			{
+			{if (countgame < 3){
+			countgame = countgame + 1; 	// counts the number of loops
+			System.out.println("Number of chances used: " + countgame);// prints the number of loops
 			JOptionPane.showMessageDialog(null, "You picked door number 1!");
 			LabelFrame pic = new LabelFrame();
 			pic.getGraphics1();
-			}
+		}
+			
+				else
+					{
+					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					System.exit(0);
+					}}
 
 		if (event.getSource() == buttons[1]) // if 2 is selected
-		{
-		JOptionPane.showMessageDialog(null, "You picked door number 2!");
-		LabelFrame pic = new LabelFrame();
-		pic.getGraphics2();
-		}
+				{if (countgame < 3){
+				countgame = countgame + 1; 	// counts the number of loops
+				System.out.println("Number of chances used: " + countgame);// prints the number of loops
+				JOptionPane.showMessageDialog(null, "You picked door number 2!");
+				LabelFrame pic = new LabelFrame();
+				pic.getGraphics2();
+				}
+		
+				else
+					{
+					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					System.exit(0);
+					}}
 		
 		if (event.getSource() == buttons[2]) // if 3 is selected
-			{
-			JOptionPane.showMessageDialog(null, "You picked door number 3!");
-			LabelFrame pic = new LabelFrame();
-			pic.getGraphics3();
-			}	
+				{if (countgame < 3){
+				countgame = countgame + 1; 	// counts the number of loops
+				System.out.println("Number of chances used: " + countgame);// prints the number of loops
+				JOptionPane.showMessageDialog(null, "You picked door number 3!");
+				LabelFrame pic = new LabelFrame();
+				pic.getGraphics3();
+				}
+			
+			else
+				{
+				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				System.exit(0);
+				}}	
 		
 		if (event.getSource() == buttons[3]) // if 3 is selected
-			{
-			JOptionPane.showMessageDialog(null, "You picked door number 4!");
-			LabelFrame pic = new LabelFrame();
-			pic.getGraphics4();
-		}	
+				{if (countgame < 3){
+				countgame = countgame + 1; 	// counts the number of loops
+				System.out.println("Number of chances used: " + countgame);// prints the number of loops
+				JOptionPane.showMessageDialog(null, "You picked door number 4!");
+				LabelFrame pic = new LabelFrame();
+				pic.getGraphics4();}
+			
+			else
+				{
+				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				System.exit(0);
+				}}	
 		
 		if (event.getSource() == buttons[4]) // if 3 is selected
-			{
-			JOptionPane.showMessageDialog(null, "You picked door number 5!");
-			LabelFrame pic = new LabelFrame();
-			pic.getGraphics5();
-		}	
+				{if (countgame < 3){
+				countgame = countgame + 1; // counts the number of loops
+				System.out.println("Number of chances used: " + countgame);// prints the number of loops
+				JOptionPane.showMessageDialog(null, "You picked door number 5!");
+				LabelFrame pic = new LabelFrame();
+				pic.getGraphics5();}
+				
+			else
+				{
+				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				System.exit(0);
+				}}	
 		
 		else if(event.getSource() == buttons[5])
 		{
 			JOptionPane.showMessageDialog(null, "The game is over.");
 			System.exit(EXIT_ON_CLOSE);
 		}
-			
-	//do
-		//for (int gamecount = 0; gamecount < 3; gamecount++)
-	{// Set layout based on toggle
-	//	countgame = countgame + 1; // counts the number of loops
-		if (toggle) 
-		
-		{	
-			container.setLayout(gridLayout1);
-			
-		}
-		
-		toggle =! toggle;
-		container.validate(); // re-lay out container		
-	}
-	//	while(countgame <= 3);
 	
-	//	JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
-	//	System.exit(EXIT_ON_CLOSE);
+	{// Set layout
+					
+		container.setLayout(gridLayout1);
+	}
 	}}

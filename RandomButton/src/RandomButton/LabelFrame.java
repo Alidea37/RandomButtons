@@ -88,7 +88,7 @@ public class LabelFrame extends JFrame {
 					pic.setVisible(true);
 					return null;
 				}
-				// create a method for jframe containing troll
+				// create a method for jframe containing the dragon
 				public Graphics getGraphics5(){ 		
 					JPanel Dragon = new JPanel();
 					LabelFrame pic = new LabelFrame();
