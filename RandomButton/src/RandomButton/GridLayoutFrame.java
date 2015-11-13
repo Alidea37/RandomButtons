@@ -1,7 +1,9 @@
 package RandomButton;
 //Fig 12.43 GridLayout frame p.528 - JH
 // Credit to Delanie for assitance with methods calling JFrame 
+// Credit to Mr. Marshall for assistance in counter
 
+// All if these items are being imported to be used throughout this class
 import java.awt.GridLayout;
 import java.awt.Container;
 import java.awt.event.ActionListener;
@@ -12,10 +14,10 @@ import javax.swing.JButton;
 import java.util.Random;
 
 
-public class GridLayoutFrame extends JFrame implements ActionListener 
+public class GridLayoutFrame extends JFrame implements ActionListener // an inheritance. It also uses an actionlistener - JH
 {
 	private final JButton[] buttons; // create array of buttons - JH
-	private static final String[] names = {"one", "two", "three", "four", "five", "six", "seven", "eight", "End Game"}; // - JH
+	private static final String[] names = {"Door 1", "Door 2", "Door 3", "Door 4", "Door 5", "Door 6", "Door 7", "Door 8", "End Game"}; // - JH
 	private final Container container;			// frame container - JH
 	private final GridLayout gridLayout1;		// grid layout - JH
 	
@@ -43,16 +45,16 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent event) 
 	{
-		int randomValue = random.nextInt(2);
+		int randomValue = random.nextInt(7);
 		
 		if (event.getSource() == buttons[0]) // if 1 is selected - JH
 				{if (countgame < 3){		// If the counter is less than 3 run game -AO
-					countgame = countgame + 1; 	
+					countgame = countgame + 1; 	// counts the number of loops  - Assistance from Professor Marshall on where the counter should be located
 					System.out.println("Number of chances used: " + countgame);
 					JOptionPane.showMessageDialog(null, "You picked door number 1!");
 					LabelFrame pic = new LabelFrame();
-					//pic.getGraphics8();
-					switch (randomValue) // Randomizes which picture is presented - JH
+					//pic.getGraphics1();}
+					switch (randomValue) // Switch case statements randomizes which picture is presented  - idea from Professor Marshall - JH
 			{
 				case 0: {pic.getGraphics1(); break;}
 				case 1: {pic.getGraphics2(); break;}
@@ -66,17 +68,18 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 			
 				else  
 					{
-					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 					System.exit(0);
 					}}
 
 		if (event.getSource() == buttons[1]) // if 2 is selected
 				{if (countgame < 3){
-					countgame = countgame + 1; 	// counts the number of loops
+					countgame = countgame + 1; 	
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 2!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue)
+					//pic.getGraphics2();}	
+					switch (randomValue)
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -90,7 +93,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 		
 				else
 					{
-					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 					System.exit(0);
 					}}
 		
@@ -100,7 +103,8 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 3!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue)
+					//pic.getGraphics3();}	
+					switch (randomValue)  
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -115,17 +119,18 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 			
 			else
 				{
-				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 				System.exit(0);
 				}}	
 		
 		if (event.getSource() == buttons[3]) // if 3 is selected
 				{if (countgame < 3){
-					//countgame = countgame + 1; 	// counts the number of loops
+					countgame = countgame + 1; 	// counts the number of loops
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 4!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue)
+					//pic.getGraphics4();}	
+					switch (randomValue)
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -139,7 +144,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 			
 			else
 				{
-				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 				System.exit(0);
 				}}	
 		
@@ -149,7 +154,8 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 5!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue) 
+					//pic.getGraphics5();}	
+					switch (randomValue) 
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -163,7 +169,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 				
 			else
 				{
-				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 				System.exit(0);
 				}}	
 		
@@ -173,7 +179,8 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 6!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue)
+					//pic.getGraphics6();}	
+					switch (randomValue)
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -188,7 +195,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 	
 				else
 					{
-					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 					System.exit(0);
 					}}	
 
@@ -198,7 +205,8 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 					System.out.println("Number of chances used: " + countgame);// prints the number of loops
 					JOptionPane.showMessageDialog(null, "You picked door number 7!");
 					LabelFrame pic = new LabelFrame();
-						switch (randomValue)
+					//pic.getGraphics7();}	
+					switch (randomValue)
 					{
 						case 0: {pic.getGraphics1(); break;}
 						case 1: {pic.getGraphics2(); break;}
@@ -212,7 +220,7 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 	
 				else
 					{
-					JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+					JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 					System.exit(0);
 					}}	
 
@@ -222,7 +230,8 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 				System.out.println("Number of chances used: " + countgame);// prints the number of loops
 				JOptionPane.showMessageDialog(null, "You picked door number 8!");
 				LabelFrame pic = new LabelFrame();
-					switch (randomValue)
+				//pic.getGraphics8();}	
+				switch (randomValue)
 				{
 					case 0: {pic.getGraphics1(); break;}
 					case 1: {pic.getGraphics2(); break;}
@@ -236,14 +245,14 @@ public class GridLayoutFrame extends JFrame implements ActionListener
 		
 			else
 				{
-				JOptionPane.showMessageDialog(null, "You have run out of chances. The game is over.");
+				JOptionPane.showMessageDialog(null, "You have been caught. The game is over.");
 				System.exit(0);
 				}}	
 		
 	
 					else if(event.getSource() == buttons[8])
 				{
-						JOptionPane.showMessageDialog(null, "The game is over.");
+						JOptionPane.showMessageDialog(null, "The game is over. You did not escape.");
 						System.exit(EXIT_ON_CLOSE);
 				}
 	
