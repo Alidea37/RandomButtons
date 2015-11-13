@@ -1,0 +1,7 @@
+Description:
+
+This program is a game that allows players three chances to select a button that reveals their move through a haunted castle.
+Players start out in the middle of the castle and have to choose which direction they want to go.
+Players have the option of leaving the castle at any time via the End Game button.
+Each button is randomized so selecting it more than once may result in a different ending.
+The action listener counts the number of selections the user makes and ends the game if the player tries to select a button after their third try.
